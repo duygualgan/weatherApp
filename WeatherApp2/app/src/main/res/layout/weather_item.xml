@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
-    app:cardElevaton="10dp"
+    app:cardElevation="10dp"
     app:cardUseCompatPadding="true">
 
     <LinearLayout
@@ -17,8 +17,8 @@
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/tempImg"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:src="@mipmap/ic_launcher"/>
         <TextView
             android:id="@+id/temps"
@@ -39,8 +39,6 @@
             android:textColor="@color/black"
             android:textSize="11sp"/>
 
-
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
-

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    android:background="@drawable/weaback"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -71,7 +71,7 @@
                 android:id="@+id/updated_at"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="24dp"
+                android:textSize="18dp"
                 android:text="11 eylül 2022 , 3:40"
                 android:textColor="@color/white" />
 
@@ -101,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="40dp"
                 android:layout_gravity="center"
                 android:gravity="center">
                 <TextView
@@ -113,7 +113,7 @@
                     android:layout_height="wrap_content"/>
 
                 <Space
-                    android:layout_width="50dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/temp_max"
@@ -144,7 +144,7 @@
                 android:id="@+id/temp_info_rec"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:listitem="@layout/weather_item" />
+                tools:listitem="@layout/weather_item"/>
 
 
         </LinearLayout>
@@ -161,4 +161,6 @@
         android:layout_height="wrap_content"
         android:text="Something went wrong.."
         android:visibility="gone"/>
+
+
 </LinearLayout>

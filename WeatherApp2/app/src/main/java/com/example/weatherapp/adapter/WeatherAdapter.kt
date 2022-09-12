@@ -11,7 +11,7 @@ import com.example.weatherapp.R
 import com.example.weatherapp.model.WeatherData
 
 class WeatherAdapter (val c : Context, var weatherList : ArrayList<WeatherData>):
-RecyclerView.Adapter<WeatherAdapter.WeatherViewHolder>()
+    RecyclerView.Adapter<WeatherAdapter.WeatherViewHolder>()
 {
     inner class WeatherViewHolder (v: View): RecyclerView.ViewHolder(v){
         val tempImg =  v.findViewById<ImageView>(R.id.tempImg)

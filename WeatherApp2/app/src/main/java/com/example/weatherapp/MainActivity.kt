@@ -7,7 +7,6 @@ import android.os.AsyncTask
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     var CITY :String =""
     var API :String = "3ba4f22d70d89cf0b2635e1d9106bfdf"
+    
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
 
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
-       // setContentView (view)
+        setContentView (view)
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
@@ -54,9 +54,7 @@ class MainActivity : AppCompatActivity() {
                 WeatherTask().execute()
             }
         }
-
     }
-
 
     @SuppressLint("MissingPermission")
     private fun obtainLocation() {
@@ -69,9 +67,10 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
     private fun getCityName(longitude: Double?, latitude: Double?): String {
         var cityName = "not found"
-        val gcd : Geocoder = Geocoder(this@MainActivity,Locale.getDefault())
+        val gcd : Geocoder = Geocoder(this@MainActivity, Locale.getDefault())
 
         try {
 
@@ -84,7 +83,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-        catch (e:Exception){
+        catch (e: Exception){
             e.printStackTrace()
         }
 
@@ -95,7 +94,7 @@ class MainActivity : AppCompatActivity() {
 
         override fun onPreExecute() {
             super.onPreExecute()
-            binding.loader.visibility =View.VISIBLE
+            binding.loader.visibility = View.VISIBLE
             binding.mainContainer.visibility = View.GONE
             binding.errorText.visibility = View.GONE
 
@@ -106,8 +105,8 @@ class MainActivity : AppCompatActivity() {
 
             var response : String?
 
-            try {
-                response = URL ("https://api.openweathermap.org/data/2.5/weather?p=${CITY.lowercase()}&units=metric&appid=$API").readText(
+            try {                  // http://api.weatherapi.com/v1/current.json?key=deda890fdb0a4133a39125432221209&q=turkey&aqi=no
+                response = URL ("https://api.openweathermap.org/data/2.5/weather?q=${CITY.lowercase()}&units=metric&appid=$API").readText(
                     Charsets.UTF_8
                 )
             }
@@ -118,7 +117,7 @@ class MainActivity : AppCompatActivity() {
             return response !!
         }
 
-        @RequiresApi (Build.VERSION_CODES.N)
+        @RequiresApi(Build.VERSION_CODES.N)
         override fun onPostExecute(result: String?) {
             super.onPostExecute(result)
             try {
@@ -166,10 +165,10 @@ class MainActivity : AppCompatActivity() {
 
                 weatherList.add(
                     WeatherData(
-                    R.drawable.sunrise,
-                    "Sunrise",
-                    SimpleDateFormat("hh:mm a", Locale.getDefault())
-                        .format(Date(sunrise*1000))))
+                        R.drawable.sunrise,
+                        "Sunrise",
+                        SimpleDateFormat("hh:mm a", Locale.getDefault())
+                            .format(Date(sunrise*1000))))
 
                 weatherList.add(
                     WeatherData(
@@ -206,6 +205,5 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
 }
-
-

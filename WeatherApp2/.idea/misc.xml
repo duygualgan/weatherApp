@@ -3,9 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/background.xml" value="0.2535" />
         <entry key="app/src/main/res/drawable/login_background.xml" value="0.2535" />
-        <entry key="app/src/main/res/drawable/weaback.xml" value="0.2535" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/weather_item.xml" value="0.35520833333333335" />
       </map>
     </option>
